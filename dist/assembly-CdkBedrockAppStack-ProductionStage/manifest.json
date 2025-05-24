@@ -1,0 +1,139 @@
+{
+  "version": "41.0.0",
+  "artifacts": {
+    "CdkBedrockAppStackProductionStageCDKBedrockProd9E9F304F.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkBedrockAppStackProductionStageCDKBedrockProd9E9F304F.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkBedrockAppStackProductionStageCDKBedrockProd9E9F304F": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "CdkBedrockAppStackProductionStageCDKBedrockProd9E9F304F.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1/785802c5edf49268912119ae61fd7cb261b90eb46be67379ab95ea87a05ac8f6.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkBedrockAppStackProductionStageCDKBedrockProd9E9F304F.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "CDKBedrock-Prod"
+      },
+      "dependencies": [
+        "CdkBedrockAppStackProductionStageCDKBedrockProd9E9F304F.assets"
+      ],
+      "metadata": {
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionEDFF83A9"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionDeployment337AB68Df73b437145ca07bb73735e9a4a927dac"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/DeploymentStage.production/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionDeploymentStageproductionDEC44DC7"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionEndpoint41B5A127"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/Default/v1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionv1C320E417"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/Default/v1/analysis/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionv1analysis9B7D0FF8"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/Default/v1/analysis/POST/ApiPermission.CdkBedrockAppStackProductionStageCDKBedrockProdBedrockAPIproductionECEA7EE5.POST..v1.analysis": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionv1analysisPOSTApiPermissionCdkBedrockAppStackProductionStageCDKBedrockProdBedrockAPIproductionECEA7EE5POSTv1analysis05D19BEA"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/Default/v1/analysis/POST/ApiPermission.Test.CdkBedrockAppStackProductionStageCDKBedrockProdBedrockAPIproductionECEA7EE5.POST..v1.analysis": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionv1analysisPOSTApiPermissionTestCdkBedrockAppStackProductionStageCDKBedrockProdBedrockAPIproductionECEA7EE5POSTv1analysisD3D7CEEB"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BedrockAPI-production/Default/v1/analysis/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIproductionv1analysisPOST90F7E361"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/QueryBedrockLambdaFunction-production/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryBedrockLambdaFunctionproductionServiceRole15E4C5F4"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/QueryBedrockLambdaFunction-production/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryBedrockLambdaFunctionproductionServiceRoleDefaultPolicyFA5F6BA1"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/QueryBedrockLambdaFunction-production/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryBedrockLambdaFunctionproduction03B11651"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/APIGatewayURL-production": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayURLproduction"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkBedrockAppStack/ProductionStage/CDKBedrock-Prod"
+    }
+  },
+  "minimumCliVersion": "2.1005.0"
+}

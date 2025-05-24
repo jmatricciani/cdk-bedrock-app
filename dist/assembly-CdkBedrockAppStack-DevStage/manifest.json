@@ -1,0 +1,139 @@
+{
+  "version": "41.0.0",
+  "artifacts": {
+    "CdkBedrockAppStackDevStageCDKBedrockDev08904BF6.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkBedrockAppStackDevStageCDKBedrockDev08904BF6.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkBedrockAppStackDevStageCDKBedrockDev08904BF6": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "CdkBedrockAppStackDevStageCDKBedrockDev08904BF6.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1/a0fc1a497ab5585bbdda116a018f72fc98deba9830d8ba22b242902bac8d9aee.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkBedrockAppStackDevStageCDKBedrockDev08904BF6.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "CDKBedrock-Dev"
+      },
+      "dependencies": [
+        "CdkBedrockAppStackDevStageCDKBedrockDev08904BF6.assets"
+      ],
+      "metadata": {
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdev94758C1D"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdevDeploymentA0C4028C3fbf562ebfeaa398e41883103ef68a19"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/DeploymentStage.dev/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdevDeploymentStagedev8AD7DBA9"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdevEndpointDA772125"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/Default/v1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdevv172A16119"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/Default/v1/analysis/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdevv1analysis674B782A"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/Default/v1/analysis/POST/ApiPermission.CdkBedrockAppStackDevStageCDKBedrockDevBedrockAPIdev3BAE5F8D.POST..v1.analysis": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdevv1analysisPOSTApiPermissionCdkBedrockAppStackDevStageCDKBedrockDevBedrockAPIdev3BAE5F8DPOSTv1analysis1AF1EAB2"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/Default/v1/analysis/POST/ApiPermission.Test.CdkBedrockAppStackDevStageCDKBedrockDevBedrockAPIdev3BAE5F8D.POST..v1.analysis": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdevv1analysisPOSTApiPermissionTestCdkBedrockAppStackDevStageCDKBedrockDevBedrockAPIdev3BAE5F8DPOSTv1analysis548E666C"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BedrockAPI-dev/Default/v1/analysis/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BedrockAPIdevv1analysisPOSTE7FF1AE9"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/QueryBedrockLambdaFunction-dev/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryBedrockLambdaFunctiondevServiceRole957D74DE"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/QueryBedrockLambdaFunction-dev/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryBedrockLambdaFunctiondevServiceRoleDefaultPolicyCE02B6BC"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/QueryBedrockLambdaFunction-dev/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryBedrockLambdaFunctiondevC640A1D2"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/APIGatewayURL-dev": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayURLdev"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkBedrockAppStack/DevStage/CDKBedrock-Dev/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkBedrockAppStack/DevStage/CDKBedrock-Dev"
+    }
+  },
+  "minimumCliVersion": "2.1005.0"
+}

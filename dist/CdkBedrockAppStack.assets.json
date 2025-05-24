@@ -1,0 +1,21 @@
+{
+  "version": "41.0.0",
+  "files": {
+    "fc49fc68d5618931802bcb0cc1f2b337e4f1f988d091fa96f582fc4929a9c60a": {
+      "displayName": "CdkPipelineStack Template",
+      "source": {
+        "path": "CdkBedrockAppStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1",
+          "objectKey": "fc49fc68d5618931802bcb0cc1f2b337e4f1f988d091fa96f582fc4929a9c60a.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

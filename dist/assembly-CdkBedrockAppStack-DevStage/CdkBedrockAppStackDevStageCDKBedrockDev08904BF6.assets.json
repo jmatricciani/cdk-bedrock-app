@@ -1,0 +1,36 @@
+{
+  "version": "41.0.0",
+  "files": {
+    "dbea197fbe85f4f321a7f65abcf0dc9cfdf69ab2d7aafd78513e3061815388fe": {
+      "displayName": "QueryBedrockLambdaFunction-dev/Code",
+      "source": {
+        "path": "../asset.dbea197fbe85f4f321a7f65abcf0dc9cfdf69ab2d7aafd78513e3061815388fe",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1",
+          "objectKey": "dbea197fbe85f4f321a7f65abcf0dc9cfdf69ab2d7aafd78513e3061815388fe.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-us-east-1"
+        }
+      }
+    },
+    "a0fc1a497ab5585bbdda116a018f72fc98deba9830d8ba22b242902bac8d9aee": {
+      "displayName": "CDKBedrock-Dev Template",
+      "source": {
+        "path": "CdkBedrockAppStackDevStageCDKBedrockDev08904BF6.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1",
+          "objectKey": "a0fc1a497ab5585bbdda116a018f72fc98deba9830d8ba22b242902bac8d9aee.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

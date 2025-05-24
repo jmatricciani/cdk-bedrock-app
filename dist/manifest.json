@@ -1,0 +1,214 @@
+{
+  "version": "41.0.0",
+  "artifacts": {
+    "assembly-CdkBedrockAppStack-DevStage": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-CdkBedrockAppStack-DevStage",
+        "displayName": "CdkBedrockAppStack/DevStage"
+      }
+    },
+    "assembly-CdkBedrockAppStack-ProductionStage": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-CdkBedrockAppStack-ProductionStage",
+        "displayName": "CdkBedrockAppStack/ProductionStage"
+      }
+    },
+    "CdkBedrockAppStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkBedrockAppStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkBedrockAppStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "CdkBedrockAppStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1/fc49fc68d5618931802bcb0cc1f2b337e4f1f988d091fa96f582fc4929a9c60a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkBedrockAppStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "CdkPipelineStack"
+      },
+      "dependencies": [
+        "CdkBedrockAppStack.assets"
+      ],
+      "metadata": {
+        "/CdkBedrockAppStack/CdkCodePipeline": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "V1 pipeline type is implicitly selected when `pipelineType` is not set. If you want to use V2 type, set `PipelineType.V2`. [ack: @aws-cdk/aws-codepipeline:unspecifiedPipelineType]",
+            "trace": [
+              "Annotations.addMessage (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addWarningV2 (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "CodePipeline.doBuildPipeline (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/pipelines/lib/codepipeline/codepipeline.js:1:5847)",
+              "CodePipeline.buildPipeline (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/pipelines/lib/main/pipeline-base.js:1:2621)",
+              "CodePipeline.buildJustInTime (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/pipelines/lib/main/pipeline-base.js:1:2688)",
+              "Object.visit (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/pipelines/lib/main/pipeline-base.js:1:1514)",
+              "recurse (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/private/synthesis.js:2:4158)",
+              "recurse (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/private/synthesis.js:2:4393)",
+              "recurse (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/private/synthesis.js:2:4393)",
+              "invokeAspectsV2 (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/private/synthesis.js:2:2844)",
+              "synthesize (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/private/synthesis.js:1:1501)",
+              "App.synth (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/stage.js:1:2672)",
+              "process.<anonymous> (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/aws-cdk-lib/core/lib/app.js:1:1965)",
+              "Object.onceWrapper (node:events:622:26)",
+              "process.emit (node:events:507:28)",
+              "process.emit (node:domain:489:12)",
+              "process.emit.sharedData.processEmitHook.installedValue [as emit] (/home/moglee/Devslopes/OpenSource/cdk-bedrock-app/node_modules/@cspotcode/source-map-support/source-map-support.js:745:40)"
+            ]
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineArtifactsBucket16417AAF"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineArtifactsBucketPolicy54843018"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineRole85837E12"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineRoleDefaultPolicyA2BB5121"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipeline76FDD18A"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/Source/jmatricciani_cdk-bedrock-app/WebhookResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineSourcejmatriccianicdkbedrockappWebhookResource9F2764F6"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineBuildSynthCdkBuildProjectRole2DB59FDE"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineBuildSynthCdkBuildProjectRoleDefaultPolicy6D8C06AC"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/Build/Synth/CdkBuildProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineBuildSynthCdkBuildProjectC5556333"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Pipeline/ProductionStage/PromoteToProd/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineProductionStagePromoteToProdCodePipelineActionRole84727F92"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/CodeBuildActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineCodeBuildActionRole25171C73"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/CodeBuildActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineCodeBuildActionRoleDefaultPolicy7423C4FC"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/UpdatePipeline/SelfMutation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineUpdatePipelineSelfMutationRole440337CD"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineUpdatePipelineSelfMutationRoleDefaultPolicyD480C46F"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/UpdatePipeline/SelfMutation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineUpdatePipelineSelfMutationD46CEB17"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Assets/FileRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineAssetsFileRole12BF86D5"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Assets/FileRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineAssetsFileRoleDefaultPolicy5D376855"
+          }
+        ],
+        "/CdkBedrockAppStack/CdkCodePipeline/Assets/FileAsset1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkCodePipelineAssetsFileAsset1BE23CC7A"
+          }
+        ],
+        "/CdkBedrockAppStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkBedrockAppStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkBedrockAppStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkBedrockAppStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  },
+  "minimumCliVersion": "2.1005.0"
+}

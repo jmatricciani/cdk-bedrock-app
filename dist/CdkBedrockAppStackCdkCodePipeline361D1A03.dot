@@ -1,0 +1,61 @@
+digraph G {
+  # Arrows represent an "unlocks" relationship (opposite of dependency). So chosen
+  # because the layout looks more natural that way.
+  # To represent subgraph dependencies, subgraphs are represented by BEGIN/END nodes.
+  # To render: `dot -Tsvg CdkBedrockAppStackCdkCodePipeline361D1A03.dot > graph.svg`, open in a browser.
+  node [shape="box"];
+"BEGIN Build" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END Build" [shape="cds", style="filled", fillcolor="#b7deff"];
+"Build.Synth";
+"Source.jmatricciani/cdk-bedrock-app" -> "Build.Synth";
+"BEGIN Build" -> "Build.Synth";
+"Build.Synth" -> "END Build";
+"BEGIN UpdatePipeline" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END UpdatePipeline" [shape="cds", style="filled", fillcolor="#b7deff"];
+"UpdatePipeline.SelfMutate";
+"Build.Synth" -> "UpdatePipeline.SelfMutate";
+"BEGIN UpdatePipeline" -> "UpdatePipeline.SelfMutate";
+"UpdatePipeline.SelfMutate" -> "END UpdatePipeline";
+"BEGIN Assets" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END Assets" [shape="cds", style="filled", fillcolor="#b7deff"];
+"Assets.FileAsset1";
+"UpdatePipeline.SelfMutate" -> "Assets.FileAsset1";
+"BEGIN Assets" -> "Assets.FileAsset1";
+"Assets.FileAsset1" -> "END Assets";
+"BEGIN DevStage" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END DevStage" [shape="cds", style="filled", fillcolor="#b7deff"];
+"UpdatePipeline.SelfMutate" -> "BEGIN DevStage";
+"BEGIN DevStage.CDKBedrock-Dev" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END DevStage.CDKBedrock-Dev" [shape="cds", style="filled", fillcolor="#b7deff"];
+"DevStage.CDKBedrock-Dev.Deploy";
+"DevStage.CDKBedrock-Dev.Prepare" -> "DevStage.CDKBedrock-Dev.Deploy";
+"DevStage.CDKBedrock-Dev.Prepare";
+"Build.Synth" -> "DevStage.CDKBedrock-Dev.Prepare";
+"Assets.FileAsset1" -> "DevStage.CDKBedrock-Dev.Prepare";
+"BEGIN DevStage.CDKBedrock-Dev" -> "DevStage.CDKBedrock-Dev.Prepare";
+"DevStage.CDKBedrock-Dev.Deploy" -> "END DevStage.CDKBedrock-Dev";
+"BEGIN DevStage" -> "BEGIN DevStage.CDKBedrock-Dev";
+"END DevStage.CDKBedrock-Dev" -> "END DevStage";
+"BEGIN ProductionStage" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END ProductionStage" [shape="cds", style="filled", fillcolor="#b7deff"];
+"UpdatePipeline.SelfMutate" -> "BEGIN ProductionStage";
+"END DevStage" -> "BEGIN ProductionStage";
+"BEGIN ProductionStage.CDKBedrock-Prod" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END ProductionStage.CDKBedrock-Prod" [shape="cds", style="filled", fillcolor="#b7deff"];
+"ProductionStage.PromoteToProd" -> "BEGIN ProductionStage.CDKBedrock-Prod";
+"ProductionStage.CDKBedrock-Prod.Deploy";
+"ProductionStage.CDKBedrock-Prod.Prepare" -> "ProductionStage.CDKBedrock-Prod.Deploy";
+"ProductionStage.CDKBedrock-Prod.Prepare";
+"Build.Synth" -> "ProductionStage.CDKBedrock-Prod.Prepare";
+"Assets.FileAsset1" -> "ProductionStage.CDKBedrock-Prod.Prepare";
+"BEGIN ProductionStage.CDKBedrock-Prod" -> "ProductionStage.CDKBedrock-Prod.Prepare";
+"ProductionStage.CDKBedrock-Prod.Deploy" -> "END ProductionStage.CDKBedrock-Prod";
+"ProductionStage.PromoteToProd";
+"BEGIN ProductionStage" -> "ProductionStage.PromoteToProd";
+"END ProductionStage.CDKBedrock-Prod" -> "END ProductionStage";
+"BEGIN Source" [shape="cds", style="filled", fillcolor="#b7deff"];
+"END Source" [shape="cds", style="filled", fillcolor="#b7deff"];
+"Source.jmatricciani/cdk-bedrock-app";
+"BEGIN Source" -> "Source.jmatricciani/cdk-bedrock-app";
+"Source.jmatricciani/cdk-bedrock-app" -> "END Source";
+}
